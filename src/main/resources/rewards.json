@@ -1,0 +1,333 @@
+{
+    "data": [
+        {
+            "id": "1",
+            "type": "reward-catalogues",
+            "attributes": {
+                "description": "Hoodie",
+                "points": 60,
+                "redeem-status": "Pending",
+                "image-url": "https://onejourney-668a1.appspot.com.storage.googleapis.com/reward_catalogue_images/1/reward_catalogue1.jpeg"
+            }
+        },
+
+        {
+            "id": "2",
+            "type": "reward-catalogues",
+            "attributes": {
+                "description": "Waterproof Bluetooth Speaker",
+                "points": 40,
+                "redeem-status": "Eligible",
+                "image-url": "https://onejourney-668a1.appspot.com.storage.googleapis.com/reward_catalogue_images/2/reward_catalogue2.jpeg"
+            }
+        },
+
+        {
+            "id": "3",
+            "type": "reward-catalogues",
+            "attributes": {
+                "description": "2-in-1 Retractable Charging Cable",
+                "points": 30,
+                "redeem-status": "Redeemed",
+                "image-url": "https://onejourney-668a1.appspot.com.storage.googleapis.com/reward_catalogue_images/3/reward_catalogue3.jpeg"
+            }
+        },
+
+        {
+            "id": "4",
+            "type": "reward-catalogues",
+            "attributes": {
+                "description": "Microfibre Screen Cleaner",
+                "points": 20,
+                "redeem-status": "Pending",
+                "image-url": "https://onejourney-668a1.appspot.com.storage.googleapis.com/reward_catalogue_images/4/reward_catalogue4.png"
+            }
+        },
+      
+        {
+            "id": "5",
+            "type": "reward-catalogues",
+            "attributes": {
+                "description": "NP Pop Socket ExtraGoodVibes",
+                "points": 30,
+                "redeem-status": "Eligible",
+                "image-url": "https://imgur.com/p4YIDfD.jpg"
+            }
+        },
+
+        {
+            "id": "6",
+            "type": "reward-catalogues",
+            "attributes": {
+                "description": "NP Pop Socket GoodVibesOnly",
+                "points": 30,
+                "redeem-status": "Eligible",
+                "image-url": "https://imgur.com/AuYwPlV.jpg"
+            }
+        },
+
+        {
+            "id": "7",
+            "type": "reward-catalogues",
+            "attributes": {
+                "description": "NP Pop Socket xtragoodvibes",
+                "points": 30,
+                "redeem-status": "Eligible",
+                "image-url": "https://imgur.com/rkmecgt.jpg"
+            }
+        },
+
+        {
+            "id": "8",
+            "type": "reward-catalogues",
+            "attributes": {
+                "description": "NP Water Bottle",
+                "points": 40,
+                "redeem-status": "Eligible",
+                "image-url": "https://imgur.com/o6eNSAD.jpg"
+            }
+        },
+
+        {
+            "id": "9",
+            "type": "reward-catalogues",
+            "attributes": {
+                "description": "Laptop Sticker xtraMagical, Limited Stock!",
+                "points": 10,
+                "redeem-status": "Eligible",
+                "image-url": "https://imgur.com/nNIEP8D.jpg"
+            }
+        },
+
+        {
+            "id": "10",
+            "type": "reward-catalogues",
+            "attributes": {
+                "description": "Laptop Sticker popcorn, Limited Stock!",
+                "points": 10,
+                "redeem-status": "Eligible",
+                "image-url": "https://imgur.com/4PeJlyR.jpg"
+            }
+        },
+
+        {
+            "id": "11",
+            "type": "reward-catalogues",
+            "attributes": {
+                "description": "Laptop Sticker serviceLearning.",
+                "points": 10,
+                "redeem-status": "Eligible",
+                "image-url": "https://imgur.com/GUfdgAu.png"
+            }
+        },
+
+        {
+            "id": "12",
+            "type": "reward-catalogues",
+            "attributes": {
+                "description": "Laptop Sticker NgeeAnnPoly",
+                "points": 10,
+                "redeem-status": "Eligible",
+                "image-url": "https://imgur.com/lJ9ywNU.jpg"
+            }
+        },
+
+        {
+            "id": "13",
+            "type": "reward-catalogues",
+            "attributes": {
+                "description": "Laptop Sticker I<3NP, Limited Stock!",
+                "points": 10,
+                "redeem-status": "Eligible",
+                "image-url": "https://imgur.com/p48kmCE.jpg"
+            }
+        },
+      
+      {
+            "id": "14",
+            "type": "reward-catalogues",
+            "attributes": {
+                "description": "Ngee Ann xtraBlackTee",
+                "points": 30,
+                "redeem-status": "Eligible",
+                "image-url": "https://i.imgur.com/xuo1QsF.jpg"
+            }
+        },
+      
+      {
+            "id": "15",
+            "type": "reward-catalogues",
+            "attributes": {
+                "description": "Ngee Ann 1-out-of-4 tee",
+                "points": 30,
+                "redeem-status": "Eligible",
+                "image-url": "https://i.imgur.com/ZeOLhw1.jpg"
+            }
+        },
+      
+      {
+            "id": "16",
+            "type": "reward-catalogues",
+            "attributes": {
+                "description": "Ngee Ann xtraLeBag, Limited Stock!",
+                "points": 40,
+                "redeem-status": "Eligible",
+                "image-url": "https://i.imgur.com/OBZ12zH.jpg"
+            }
+        },
+      
+      {
+            "id": "17",
+            "type": "reward-catalogues",
+            "attributes": {
+                "description": "Ngee Ann drawstringBag, Limited Stock!",
+                "points": 40,
+                "redeem-status": "Eligible",
+                "image-url": "https://i.imgur.com/DzerRXD.jpg"
+            }
+        },
+      
+      {
+            "id": "18",
+            "type": "reward-catalogues",
+            "attributes": {
+                "description": "Ngee Ann Food Voucher, Limited Stock!",
+                "points": 30,
+                "redeem-status": "Eligible",
+                "image-url": "https://i.imgur.com/2v75kYd.png"
+            }
+        },
+      
+      {
+            "id": "19",
+            "type": "reward-catalogues",
+            "attributes": {
+                "description": "Ngee Ann Popular one $5-Voucher, Limited Stock!",
+                "points": 30,
+                "redeem-status": "Eligible",
+                "image-url": "https://i.imgur.com/7evTJxc.png"
+            }
+        },
+      
+      {
+            "id": "20",
+            "type": "reward-catalogues",
+            "attributes": {
+                "description": "Donate $5 to Singapore Children Society.",
+                "points": 30,
+                "redeem-status": "Eligible",
+                "image-url": "https://i.imgur.com/Jkrw8xq.jpg"
+            }
+        },
+      
+      {
+            "id": "21",
+            "type": "reward-catalogues",
+            "attributes": {
+                "description": "Donate $10 to Singapore Children Society.",
+                "points": 40,
+                "redeem-status": "Eligible",
+                "image-url": "https://i.imgur.com/Jkrw8xq.jpg"
+            }
+        },
+      
+      {
+            "id": "22",
+            "type": "reward-catalogues",
+            "attributes": {
+                "description": "Donate $15 to Singapore Children Society.",
+                "points": 50,
+                "redeem-status": "Eligible",
+                "image-url": "https://i.imgur.com/Jkrw8xq.jpg"
+            }
+        },
+      
+      {
+            "id": "23",
+            "type": "reward-catalogues",
+            "attributes": {
+                "description": "Google Home Mini Charcoal.",
+                "points": 50,
+                "redeem-status": "Eligible",
+                "image-url": "https://i.imgur.com/E97yGxE.jpg"
+            }
+        },
+      
+      {
+            "id": "24",
+            "type": "reward-catalogues",
+            "attributes": {
+                "description": "Google Home Mini Chalk.",
+                "points": 50,
+                "redeem-status": "Eligible",
+                "image-url": "https://i.imgur.com/gmazDog.jpg"
+            }
+        },
+      
+      {
+            "id": "25",
+            "type": "reward-catalogues",
+            "attributes": {
+                "description": "Google Home Mini Coral.",
+                "points": 50,
+                "redeem-status": "Eligible",
+                "image-url": "https://i.imgur.com/jGyATSN.jpg"
+            }
+        },
+      
+      {
+            "id": "26",
+            "type": "reward-catalogues",
+            "attributes": {
+                "description": "Google Home Mini Aqua.",
+                "points": 50,
+                "redeem-status": "Eligible",
+                "image-url": "https://i.imgur.com/QyuQK3N.jpg"
+            }
+        },
+      
+      {
+            "id": "27",
+            "type": "reward-catalogues",
+            "attributes": {
+                "description": "USB to USB C cable",
+                "points": 20,
+                "redeem-status": "Eligible",
+                "image-url": "https://i.imgur.com/jfrg0Zm.jpg"
+            }
+        },
+      
+      {
+            "id": "28",
+            "type": "reward-catalogues",
+            "attributes": {
+                "description": "USB C to USB C cable",
+                "points": 40,
+                "redeem-status": "Eligible",
+                "image-url": "https://i.imgur.com/PoPcHBY.png"
+            }
+        },
+      
+      {
+            "id": "29",
+            "type": "reward-catalogues",
+            "attributes": {
+                "description": "USB to Android cable",
+                "points": 20,
+                "redeem-status": "Eligible",
+                "image-url": "https://i.imgur.com/mP50XCt.jpg"
+            }
+        },
+     
+      {
+            "id": "30",
+            "type": "reward-catalogues",
+            "attributes": {
+                "description": "ICT POWER, 2000mAh",
+                "points": 30,
+                "redeem-status": "Eligible",
+                "image-url": "https://i.imgur.com/hHjtRYe.png"
+            }
+        }
+    ]
+}

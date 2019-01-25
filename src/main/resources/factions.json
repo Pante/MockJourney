@@ -1,0 +1,50 @@
+{
+    "data": [
+        {
+            "id": 1,
+            "type": "faction",
+            "attributes": {
+                "name": "Vanguard",
+                "points": 820,
+                "image-url": "https://i.imgur.com/vmmaAPs.png"
+            }
+        },
+        {
+            "id": 2,
+            "type": "faction",
+            "attributes": {
+                "name": "Valor",
+                "points": 840,
+                "image-url": "https://i.imgur.com/E5aynec.png"
+            }
+        },
+        {
+            "id": 3,
+            "type": "faction",
+            "attributes": {
+                "name": "Abnegator",
+                "points": 620,
+                "image-url": "https://i.imgur.com/ncOZYsL.png"
+            }
+        },
+        {
+            "id": 4,
+            "type": "faction",
+            "attributes": {
+                "name": "Enforcer",
+                "points": 470,
+                "image-url": "https://i.imgur.com/LDwiJi8.png"
+              
+            }
+        },
+        {
+            "id": 5,
+            "type": "faction",
+            "attributes": {
+                "name": "Commando",
+                "points": 610,
+                "image-url": "https://i.imgur.com/EpQc2yI.png"
+            }
+        }
+    ]
+}

@@ -1,0 +1,967 @@
+{
+    "data": [
+      {
+            "id": "55",
+            "type": "activities",
+            "attributes": {
+                "title": "Be Your Own Boss",
+                "description": "Be an entrepreneur in NP.",
+                "event-datetime": "2019-02-20T16:00:00.000Z",
+                "points": 1,
+                "category": "Volunteer",
+                "category-desc": "Student volunteer",
+                "staff": "ict-fintechdemo2",
+                "enrol-status": 0,
+                "updated-at": "2019-01-10T09:00:34.000Z",
+                "activity-awards": [
+                    {
+                        "id": 79,
+                        "to-award": 1,
+                        "award-name": "Compassion"
+                    }
+                ],
+                "mentor-groups": [1, 2, 3, 4, 5],
+                "image-url": "https://i.imgur.com/a8BI3t4.png"
+              
+            }
+      },
+      {
+            "id": "54",
+            "type": "activities",
+            "attributes": {
+                "title": "YEP Trip to Klang",
+                "description": "ICT will be organizing a YEP trip to Klang, West Malaysia, to work with refugee children to help them develop a small IT project or research project.",
+                "event-datetime": "2019-03-20T01:00:00.000Z",
+                "points": 1,
+                "category": "CommServe",
+                "category-desc": "Community Service",
+                "staff": "ict-fintechdemo2",
+                "enrol-status": 0,
+                "updated-at": "2019-01-10T08:00:34.000Z",
+                "activity-awards": [],
+                "mentor-groups": [1, 2, 3, 4, 5],
+                "image-url": "https://imgur.com/QNgES0C.jpg"
+              
+            }
+      },
+      {
+            "id": "53",
+            "type": "activities",
+            "attributes": {
+                "title": "Walk for Rice",
+                "description": "Count your steps using tracker & apps.",
+                "event-datetime": "2019-11-01T16:00:00.000Z",
+                "points": 1,
+                "category": "Volunteer",
+                "category-desc": "Student volunteer",
+                "staff": "ict-fintechdemo2",
+                "enrol-status": "Interested",
+                "updated-at": "2019-01-09T08:00:34.000Z",
+                "activity-awards": [],
+                "mentor-groups": [1, 2, 3, 4, 5],
+                "image-url": "https://imgur.com/Wmliw3G.jpg"
+            }
+      },
+      {
+            "id": "52",
+            "type": "activities",
+            "attributes": {
+                "title": "GET FIT-LAH HIIT-CIRCUIT",
+                "description": "Team Ngee Ann presents HIIT-CIRCUIT!.",
+                "event-datetime": "2019-10-18T17:00:00.000Z",
+                "points": 1,
+                "category": "Volunteer",
+                "category-desc": "Student volunteer",
+                "staff": "ict-fintechdemo2",
+                "enrol-status": 0,
+                "updated-at": "2019-01-09T05:00:34.000Z",
+                "activity-awards": [],
+                "mentor-groups": [1, 2, 3, 4, 5],
+                "image-url": "https://imgur.com/MnQAfYj.png"
+            }
+      },
+      {
+            "id": "51",
+            "type": "activities",
+            "attributes": {
+                "title": "GET FIT-LAH Pilates",
+                "description": "Team Ngee Ann presents Pilates for Power!",
+                "event-datetime": "2019-07-12T17:00:00.000Z",
+                "points": 1,
+                "category": "Volunteer",
+                "category-desc": "Student volunteer",
+                "staff": "ict-fintechdemo2",
+                "enrol-status": 0,
+                "updated-at": "2019-01-08T01:00:34.000Z",
+                "activity-awards": [],
+                "mentor-groups": [1, 2, 3, 4, 5],
+                "image-url": "https://imgur.com/hJ44Cgp.png"
+            }
+      },
+      {
+            "id": "50",
+            "type": "activities",
+            "attributes": {
+                "title": "NGEE ANN OPEN HOUSE",
+                "description": "Ngee Ann Open House for secondary students to visit and find out more about the courses offered at NP.",
+                "event-datetime": "2019-01-10T10:00:00.000Z",
+                "points": 1,
+                "category": "Volunteer",
+                "category-desc": "Student volunteer",
+                "staff": "ict-fintechdemo2",
+                "enrol-status": 0,
+                "updated-at": "2019-01-08T01:00:34.000Z",
+                "activity-awards": [],
+                "mentor-groups": [1, 2, 3, 4, 5],
+                "image-url": "https://imgur.com/UCCOJCS.png"
+            }
+      },
+      {
+            "id": "49",
+            "type": "activities",
+            "attributes": {
+                "title": "NP Open House Photography",
+                "description": "Volunteer in capturing fun images for the Open House!",
+                "event-datetime": "2018-12-12T00:00:00.000Z",
+                "points": 1,
+                "category": "Volunteer",
+                "category-desc": "Student volunteer",
+                "staff": "ict-fintechdemo2",
+                "enrol-status": 0,
+                "updated-at": "2019-01-04T09:17:20.000Z",
+                "activity-awards": [
+                    {
+                        "id": 75,
+                        "to-award": 1,
+                        "award-name": "Compassion"
+                    }
+                ],
+                "mentor-groups": [
+                    75,
+                    76,
+                    77,
+                    78,
+                    79,
+                    80,
+                    81,
+                    82,
+                    83,
+                    84,
+                    85,
+                    86,
+                    87,
+                    88,
+                    89,
+                    90,
+                    91,
+                    92,
+                    93
+                ],
+                "image-url": "https://jamestownarts.com/wp-content/uploads/2016/04/camera.jpg"
+            }
+      },
+      {
+            "id": "48",
+            "type": "activities",
+            "attributes": {
+                "title": "Radin Mas L4",
+                "description": "Join us to assist the elderly in picking up IT skills from  8.15am to 12pm @ Redhill Gardens RC.",
+                "event-datetime": "2018-11-22T08:15:00.000Z",
+                "points": 1,
+                "category": "Volunteer",
+                "category-desc": "Student volunteer",
+                "staff": "ict-fintechdemo2",
+                "enrol-status": 0,
+                "updated-at": "2018-10-09T04:00:34.000Z",
+                "activity-awards": [],
+                "mentor-groups": [1, 2, 3, 4, 5],
+                "image-url": "https://imgur.com/OGQiQcx.png"
+            }
+      },
+        {
+            "id": "47",
+            "type": "activities",
+            "attributes": {
+                "title": "RED CAMP 15",
+                "description": "Be a part of Redcamp 15 as an ICT student helper and introduce O-Level campers to life in NP in the area of IT!",
+                "event-datetime": "2018-11-21T16:00:00.000Z",
+                "points": 1,
+                "category": "Volunteer",
+                "category-desc": "Student volunteer",
+                "staff": "ict-fintechdemo2",
+                "enrol-status": 0,
+                "updated-at": "2018-10-08T02:00:34.000Z",
+                "activity-awards": [],
+                "mentor-groups": [1, 2, 3, 4, 5],
+                "image-url": "https://onejourney-668a1.appspot.com.storage.googleapis.com/activity_images/47/activity47.jpeg"
+            }
+        },
+        {
+            "id": "46",
+            "type": "activities",
+            "attributes": {
+                "title": "Radin Mas L3",
+                "description": "Join us to assist the elderly in picking up IT skills from  8.15am to 12pm @ Redhill Gardens RC.",
+                "event-datetime": "2018-01-20T00:15:00.000Z",
+                "points": 1,
+                "category": "CommServe",
+                "category-desc": "Community Service",
+                "staff": "ict-fintechdemo2",
+                "enrol-status": "Unenrolled",
+                "updated-at": "2018-01-09T07:45:21.000Z",
+                "activity-awards": [
+                    {
+                        "id": 77,
+                        "to-award": 1,
+                        "award-name": "Compassion"
+                    }
+                ],
+                "mentor-groups": [
+                    75,
+                    76,
+                    77,
+                    78,
+                    79,
+                    80,
+                    81,
+                    82,
+                    83,
+                    84,
+                    85,
+                    86,
+                    87,
+                    88,
+                    89,
+                    90,
+                    91,
+                    92,
+                    93
+                ],
+                "image-url": "https://onejourney-668a1.appspot.com.storage.googleapis.com/activity_images/46/activity46.jpeg"
+            }
+        },
+        {
+            "id": "45",
+            "type": "activities",
+            "attributes": {
+                "title": "IMDA Silver IT",
+                "description": "Join us for to educate the elderly about conveniences and dangers of online transactions!",
+                "event-datetime": "2017-12-16T01:30:00.000Z",
+                "points": 1,
+                "category": "CommServe",
+                "category-desc": "Community Service",
+                "staff": "ict-fintechdemo2",
+                "enrol-status": "Interested",
+                "updated-at": "2017-12-03T08:09:13.000Z",
+                "activity-awards": [
+                    {
+                        "id": 76,
+                        "to-award": 1,
+                        "award-name": "Compassion"
+                    }
+                ],
+                "mentor-groups": [
+                    75,
+                    76,
+                    77,
+                    78,
+                    79,
+                    80,
+                    81,
+                    82,
+                    83,
+                    84,
+                    85,
+                    86,
+                    87,
+                    88,
+                    89,
+                    90,
+                    91,
+                    92,
+                    93
+                ],
+                "image-url": "https://onejourney-668a1.appspot.com.storage.googleapis.com/activity_images/45/activity45.jpeg"
+            }
+        },
+        {
+            "id": "44",
+            "type": "activities",
+            "attributes": {
+                "title": "GET FIT-LAH Masala Bhangra",
+                "description": "Team Ngee Ann presents Masala Bhangra!",
+                "event-datetime": "2017-11-23T16:00:00.000Z",
+                "points": 1,
+                "category": "Volunteer",
+                "category-desc": "Student volunteer",
+                "staff": "ict-fintechdemo2",
+                "enrol-status": 0,
+                "updated-at": "2017-10-19T04:00:34.000Z",
+                "activity-awards": [],
+                "mentor-groups": [1, 2, 3, 4, 5],
+                "image-url": "https://imgur.com/zslJMFa.png"
+            }
+        },
+        {
+            "id": "43",
+            "type": "activities",
+            "attributes": {
+                "title": "Alumni Session",
+                "description": "Listen to IT Alumni talk about their current job and how school have benefitted them",
+                "event-datetime": "2017-11-19T00:00:00.000Z",
+                "points": 1,
+                "category": "CommServe",
+                "category-desc": "Community Service",
+                "staff": "ict-fintechdemo2",
+                "enrol-status": 0,
+                "updated-at": "2017-10-30T09:17:20.000Z",
+                "activity-awards": [
+                    {
+                        "id": 75,
+                        "to-award": 1,
+                        "award-name": "Compassion"
+                    }
+                ],
+                "mentor-groups": [
+                    75,
+                    76,
+                    77,
+                    78,
+                    79,
+                    80,
+                    81,
+                    82,
+                    83,
+                    84,
+                    85,
+                    86,
+                    87,
+                    88,
+                    89,
+                    90,
+                    91,
+                    92,
+                    93
+                ],
+                "image-url": "https://2.bp.blogspot.com/--bZieZmeUMc/UM_3h0AWbrI/AAAAAAAADBo/B_NpQLJp_ss/s1600/P1000324.JPG"
+            }
+        },
+        {
+            "id": "42",
+            "type": "activities",
+            "attributes": {
+                "title": "Food for Hearts",
+                "description": "Volunteer to help the needy by packing food and gifts. 9.30am-12.30pm (Meet at Bartley MRT @ 9am).",
+                "event-datetime": "2017-09-13T00:00:00.000Z",
+                "points": 1,
+                "category": "Volunteer",
+                "category-desc": "Community Service",
+                "staff": "ict-fintechdemo2",
+                "enrol-status": 0,
+                "updated-at": "2017-08-24T09:17:20.000Z",
+                "activity-awards": [
+                    {
+                        "id": 75,
+                        "to-award": 1,
+                        "award-name": "Compassion"
+                    }
+                ],
+                "mentor-groups": [
+                    75,
+                    76,
+                    77,
+                    78,
+                    79,
+                    80,
+                    81,
+                    82,
+                    83,
+                    84,
+                    85,
+                    86,
+                    87,
+                    88,
+                    89,
+                    90,
+                    91,
+                    92,
+                    93
+                ],
+                "image-url": "https://onejourney-668a1.appspot.com.storage.googleapis.com/activity_images/34/activity34.jpeg"
+            }
+        },
+        {
+            "id": "41",
+            "type": "activities",
+            "attributes": {
+                "title": "Silver IT Workshop",
+                "description": "Volunteer to serve the community through IT workshops in November!",
+                "event-datetime": "2017-08-11T00:00:00.000Z",
+                "points": 1,
+                "category": "CommServe",
+                "category-desc": "Community Service",
+                "staff": "ict-fintechdemo2",
+                "enrol-status": 0,
+                "updated-at": "2017-07-30T09:17:20.000Z",
+                "activity-awards": [
+                    {
+                        "id": 75,
+                        "to-award": 1,
+                        "award-name": "Compassion"
+                    }
+                ],
+                "mentor-groups": [
+                    75,
+                    76,
+                    77,
+                    78,
+                    79,
+                    80,
+                    81,
+                    82,
+                    83,
+                    84,
+                    85,
+                    86,
+                    87,
+                    88,
+                    89,
+                    90,
+                    91,
+                    92,
+                    93
+                ],
+                "image-url": "https://onejourney-668a1.appspot.com.storage.googleapis.com/activity_images/44/activity44.jpeg"
+            }
+        },
+        {
+            "id": "40",
+            "type": "activities",
+            "attributes": {
+                "title": "Course Talk",
+                "description": "Discover the range of exciting careers you can look forward to after graduation!(@Convention Center 3.00pm)",
+                "event-datetime": "2017-10-04T01:00:00.000Z",
+                "points": 1,
+                "category": "CommServe",
+                "category-desc": "Community Service",
+                "staff": "ict-fintechdemo2",
+                "enrol-status": "Unenrolled",
+                "updated-at": "2017-08-23T15:05:54.000Z",
+                "activity-awards": [
+                    {
+                        "id": 70,
+                        "to-award": 1,
+                        "award-name": "Compassion"
+                    }
+                ],
+                "mentor-groups": [
+                    75,
+                    76,
+                    77,
+                    78,
+                    79,
+                    80,
+                    81,
+                    82,
+                    83,
+                    84,
+                    85,
+                    86,
+                    87,
+                    88,
+                    89,
+                    90,
+                    91,
+                    92,
+                    93
+                ],
+                "image-url": "https://openhouse.np.edu.sg/wp-content/uploads/2019/01/MakersAcademy04-1024x701.png"
+            }
+        },
+        {
+            "id": "39",
+            "type": "activities",
+            "attributes": {
+                "title": "Silver InfoComm",
+                "description": "Volunteer for ICT Silver Day (4 Oct) or IMDA Silver (7 \u0026 14 Oct)! Selected participants would be notified.",
+                "event-datetime": "2017-10-04T01:00:00.000Z",
+                "points": 1,
+                "category": "CommServe",
+                "category-desc": "Community Service",
+                "staff": "ict-fintechdemo2",
+                "enrol-status": "Unenrolled",
+                "updated-at": "2017-08-23T15:05:54.000Z",
+                "activity-awards": [
+                    {
+                        "id": 70,
+                        "to-award": 1,
+                        "award-name": "Compassion"
+                    }
+                ],
+                "mentor-groups": [
+                    75,
+                    76,
+                    77,
+                    78,
+                    79,
+                    80,
+                    81,
+                    82,
+                    83,
+                    84,
+                    85,
+                    86,
+                    87,
+                    88,
+                    89,
+                    90,
+                    91,
+                    92,
+                    93
+                ],
+                "image-url": "https://onejourney-668a1.appspot.com.storage.googleapis.com/activity_images/35/activity35.jpeg"
+            }
+        },
+        {
+            "id": "38",
+            "type": "activities",
+            "attributes": {
+                "title": "Walk for Rice",
+                "description": "Count your steps using tracker & apps.",
+                "event-datetime": "2017-07-21T16:00:00.000Z",
+                "points": 1,
+                "category": "Volunteer",
+                "category-desc": "Student volunteer",
+                "staff": "ict-fintechdemo2",
+                "enrol-status": "Interested",
+                "updated-at": "2019-06-09T08:00:34.000Z",
+                "activity-awards": [],
+                "mentor-groups": [1, 2, 3, 4, 5],
+                "image-url": "https://imgur.com/Wmliw3G.jpg"
+            }
+        },
+        {
+            "id": "37",
+            "type": "activities",
+            "attributes": {
+                "title": "NP Graduation 2017",
+                "description": "Volunteer for NP Graduation for photography & others! Selected participants would be notified.",
+                "event-datetime": "2017-05-20T01:00:00.000Z",
+                "points": 1,
+                "category": "Volunteer",
+                "category-desc": "Student volunteer",
+                "staff": "ict-fintechdemo2",
+                "enrol-status": "Unenrolled",
+                "updated-at": "2017-04-03T15:05:54.000Z",
+                "activity-awards": [
+                    {
+                        "id": 70,
+                        "to-award": 1,
+                        "award-name": "Compassion"
+                    }
+                ],
+                "mentor-groups": [
+                    75,
+                    76,
+                    77,
+                    78,
+                    79,
+                    80,
+                    81,
+                    82,
+                    83,
+                    84,
+                    85,
+                    86,
+                    87,
+                    88,
+                    89,
+                    90,
+                    91,
+                    92,
+                    93
+                ],
+                "image-url": "https://www.np.edu.sg/PublishingImages/Pages/graduation/ngeeann-graduates-in-conventioncentre.jpg"
+            }
+        },
+        {
+            "id": "36",
+             "type": "activities",
+            "attributes": {
+                "title": "YEP Trip to Thailand",
+                "description": "ICT will be organizing a YEP trip to Thailand, Malaysia, to work with refugee children to help them develop a small IT project or research project.",
+                "event-datetime": "2017-02-23T01:00:00.000Z",
+                "points": 1,
+                "category": "CommServe",
+                "category-desc": "Community Service",
+                "staff": "ict-fintechdemo2",
+                "enrol-status": 0,
+                "updated-at": "2017-01-25T08:00:34.000Z",
+                "activity-awards": [],
+                "mentor-groups": [1, 2, 3, 4, 5],
+                "image-url": "https://www.gooverseas.com/sites/default/files/styles/494x342_scale_crop/public/projects-abroad-thailand1.jpg?itok=8PCF7Br4"
+              
+            }
+        },
+        {
+            "id": "35",
+                        "type": "activities",
+            "attributes": {
+                "title": "NGEE ANN OPEN HOUSE",
+                "description": "Ngee Ann Open House for secondary students to visit and find out more about the courses offered at NP.",
+                "event-datetime": "2017-01-10T10:00:00.000Z",
+                "points": 1,
+                "category": "Volunteer",
+                "category-desc": "Student volunteer",
+                "staff": "ict-fintechdemo2",
+                "enrol-status": 0,
+                "updated-at": "2017-12-30T01:00:34.000Z",
+                "activity-awards": [],
+                "mentor-groups": [1, 2, 3, 4, 5],
+                "image-url": "https://imgur.com/UCCOJCS.png"
+            }
+        },
+        {
+            "id": "34",
+            "type": "activities",
+            "attributes": {
+                "title": "Food from the Heart",
+                "description": "Volunteer to help the needy by packing food and gifts. 9.30am-12.30pm (Meet at Bartley MRT @ 9am).",
+                "event-datetime": "2016-12-23T01:30:00.000Z",
+                "points": 1,
+                "category": "CommServe",
+                "category-desc": "Community Service",
+                "staff": "ict-fintechdemo2",
+                "enrol-status": "Interested",
+                "updated-at": "2016-12-16T15:00:13.000Z",
+                "activity-awards": [
+                    {
+                        "id": 69,
+                        "to-award": 1,
+                        "award-name": "Compassion"
+                    }
+                ],
+                "mentor-groups": [
+                    75,
+                    76,
+                    77,
+                    78,
+                    79,
+                    80,
+                    81,
+                    82,
+                    83,
+                    84,
+                    85,
+                    86,
+                    87,
+                    88,
+                    89,
+                    90,
+                    91,
+                    92,
+                    93
+                ],
+                "image-url": "https://onejourney-668a1.appspot.com.storage.googleapis.com/activity_images/34/activity34.jpeg"
+            }
+        },
+        {
+            "id": "33",
+            "type": "activities",
+            "attributes": {
+                "title": "ZestUp Program",
+                "description": "Volunteer for photography for this activities and earn CCA Points",
+                "event-datetime": "2016-11-08T01:30:00.000Z",
+                "points": 1,
+                "category": "CommServe",
+                "category-desc": "Community Service",
+                "staff": "ict-fintechdemo2",
+                "enrol-status": "Interested",
+                "updated-at": "2017-10-27T15:00:13.000Z",
+                "activity-awards": [
+                    {
+                        "id": 69,
+                        "to-award": 1,
+                        "award-name": "Compassion"
+                    }
+                ],
+                "mentor-groups": [
+                    75,
+                    76,
+                    77,
+                    78,
+                    79,
+                    80,
+                    81,
+                    82,
+                    83,
+                    84,
+                    85,
+                    86,
+                    87,
+                    88,
+                    89,
+                    90,
+                    91,
+                    92,
+                    93
+                ],
+                "image-url": "http://www.apu.edu.my/sites/default/files/maverick_3.jpg"
+            }
+        },
+        {
+            "id": "32",
+            "type": "activities",
+            "attributes": {
+                "title": "RED CAMP 13",
+                "description": "Be a part of Redcamp 13 as an ICT student helper and introduce O-Level campers to life in NP in the area of IT!",
+                "event-datetime": "2016-11-21T16:00:00.000Z",
+                "points": 1,
+                "category": "Volunteer",
+                "category-desc": "Student volunteer",
+                "staff": "ict-fintechdemo2",
+                "enrol-status": 0,
+                "updated-at": "2016-10-08T02:00:34.000Z",
+                "activity-awards": [],
+                "mentor-groups": [1, 2, 3, 4, 5],
+                "image-url": "https://scontent-sin2-1.xx.fbcdn.net/v/t1.0-1/13606705_270906893276620_8366915302046766427_n.png?_nc_cat=110&_nc_ht=scontent-sin2-1.xx&oh=af27643e3b8e12672929c295e57c2793&oe=5CBBA9F6"
+            }
+        },
+        {
+            "id": "31",
+            "type": "activities",
+            "attributes": {
+                "title": "Radin Mas L2",
+                "description": "Join us to assist the elderly in picking up IT skills from  12.00pm to 2.15pm @ Bukit Timah CC.",
+                "event-datetime": "2016-10-30T08:15:00.000Z",
+                "points": 1,
+                "category": "CommServe",
+                "category-desc": "Community Service",
+                "staff": "ict-fintechdemo2",
+                "enrol-status": 0,
+                "updated-at": "2016-10-09T04:00:34.000Z",
+                "activity-awards": [],
+                "mentor-groups": [1, 2, 3, 4, 5],
+                "image-url": "https://www.channelnewsasia.com/image/8934974/16x9/991/557/191c0d0fe37146115fcc94159ccb8210/gd/elderly-in-singapore-learning-about-it.jpg"
+            }
+        },
+        {
+            "id": "30",
+            "type": "activities",
+            "attributes": {
+                "title": "FIT-LAH Piloxing",
+                "description": "Team Ngee Ann presents Piloxing!",
+                "event-datetime": "2017-11-23T16:00:00.000Z",
+                "points": 1,
+                "category": "Volunteer",
+                "category-desc": "Student volunteer",
+                "staff": "ict-fintechdemo2",
+                "enrol-status": 0,
+                "updated-at": "2017-10-19T04:00:34.000Z",
+                "activity-awards": [],
+                "mentor-groups": [1, 2, 3, 4, 5],
+                "image-url": "https://www.myactivesg.com/~/media/Consumer/Images/Sports/Fitness%20and%20Wellness/Piloxing/Piloxing%20Class%20photo%20with%20Lucretia.jpg"
+            }
+        },
+        {
+            "id": "29",
+            "type": "activities",
+            "attributes": {
+                "title": "Alumni Session",
+                "description": "Listen to IT Alumni talk about their current job and how school have benefitted them",
+                "event-datetime": "2016-07-19T00:00:00.000Z",
+                "points": 1,
+                "category": "CommServe",
+                "category-desc": "Community Service",
+                "staff": "ict-fintechdemo2",
+                "enrol-status": 0,
+                "updated-at": "2017-07-08T09:17:20.000Z",
+                "activity-awards": [
+                    {
+                        "id": 75,
+                        "to-award": 1,
+                        "award-name": "Compassion"
+                    }
+                ],
+                "mentor-groups": [
+                    75,
+                    76,
+                    77,
+                    78,
+                    79,
+                    80,
+                    81,
+                    82,
+                    83,
+                    84,
+                    85,
+                    86,
+                    87,
+                    88,
+                    89,
+                    90,
+                    91,
+                    92,
+                    93
+                ],
+                "image-url": "https://2.bp.blogspot.com/--bZieZmeUMc/UM_3h0AWbrI/AAAAAAAADBo/B_NpQLJp_ss/s1600/P1000324.JPG"
+            }
+        },
+        {
+            "id": "28",
+            "type": "activities",
+            "attributes": {
+                "title": "Be Your Own Boss",
+                "description": "Be an entrepreneur in NP.",
+                "event-datetime": "2016-06-20T16:00:00.000Z",
+                "points": 1,
+                "category": "Volunteer",
+                "category-desc": "Student volunteer",
+                "staff": "ict-fintechdemo2",
+                "enrol-status": 0,
+                "updated-at": "2019-06-14T09:00:34.000Z",
+                "activity-awards": [
+                    {
+                        "id": 79,
+                        "to-award": 1,
+                        "award-name": "Compassion"
+                    }
+                ],
+                "mentor-groups": [1, 2, 3, 4, 5],
+                "image-url": "https://imgur.com/a8BI3t4.png"
+            }
+        },
+        {
+            "id": "27",
+            "type": "activities",
+            "attributes": {
+                "title": "IMDA Silver IT",
+                "description": "Join us for to educate the elderly about conveniences and dangers of online transactions!",
+                "event-datetime": "2016-05-16T01:30:00.000Z",
+                "points": 1,
+                "category": "CommServe",
+                "category-desc": "Community Service",
+                "staff": "ict-fintechdemo2",
+                "enrol-status": "Interested",
+                "updated-at": "2016-04-29T08:09:13.000Z",
+                "activity-awards": [
+                    {
+                        "id": 76,
+                        "to-award": 1,
+                        "award-name": "Compassion"
+                    }
+                ],
+                "mentor-groups": [
+                    75,
+                    76,
+                    77,
+                    78,
+                    79,
+                    80,
+                    81,
+                    82,
+                    83,
+                    84,
+                    85,
+                    86,
+                    87,
+                    88,
+                    89,
+                    90,
+                    91,
+                    92,
+                    93
+                ],
+                "image-url": "https://onejourney-668a1.appspot.com.storage.googleapis.com/activity_images/45/activity45.jpeg"
+            }
+        },
+        {
+            "id": "26",
+            "type": "activities",
+            "attributes": {
+                "title": "IT Internship workshop",
+                "description": "Mingle and network with a few IT companies",
+                "event-datetime": "2017-02-01T01:30:00.000Z",
+                "points": 1,
+                "category": "CommServe",
+                "category-desc": "Community Service",
+                "staff": "ict-fintechdemo2",
+                "enrol-status": "Interested",
+                "updated-at": "2017-01-15T15:00:13.000Z",
+                "activity-awards": [
+                    {
+                        "id": 69,
+                        "to-award": 1,
+                        "award-name": "Compassion"
+                    }
+                ],
+                "mentor-groups": [
+                    75,
+                    76,
+                    77,
+                    78,
+                    79,
+                    80,
+                    81,
+                    82,
+                    83,
+                    84,
+                    85,
+                    86,
+                    87,
+                    88,
+                    89,
+                    90,
+                    91,
+                    92,
+                    93
+                ],
+                "image-url": "https://i.imgur.com/MCchmMe.png"
+            }
+        },
+        {
+            "id": "25",
+            "type": "activities",
+            "attributes": {
+                "title": "Food from the Heart",
+                "description": "Volunteer to help the needy by packing food and gifts. 9.30am-12.30pm (Meet at Bartley MRT @ 9am).",
+                "event-datetime": "2017-09-18T01:30:00.000Z",
+                "points": 1,
+                "category": "CommServe",
+                "category-desc": "Community Service",
+                "staff": "ict-fintechdemo2",
+                "enrol-status": "Interested",
+                "updated-at": "2017-08-23T15:00:13.000Z",
+                "activity-awards": [
+                    {
+                        "id": 69,
+                        "to-award": 1,
+                        "award-name": "Compassion"
+                    }
+                ],
+                "mentor-groups": [
+                    75,
+                    76,
+                    77,
+                    78,
+                    79,
+                    80,
+                    81,
+                    82,
+                    83,
+                    84,
+                    85,
+                    86,
+                    87,
+                    88,
+                    89,
+                    90,
+                    91,
+                    92,
+                    93
+                ],
+                "image-url": "https://onejourney-668a1.appspot.com.storage.googleapis.com/activity_images/34/activity34.jpeg"
+            }
+        }
+    ]
+}
