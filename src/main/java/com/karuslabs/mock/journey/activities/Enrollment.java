@@ -23,22 +23,14 @@
  */
 package com.karuslabs.mock.journey.activities;
 
-import com.fasterxml.jackson.annotation.*;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 
-@JsonInclude(JsonInclude.Include.NON_NULL)
-@JsonPropertyOrder({
-    "id",
-    "type",
-    "attributes"
-})
-public class Activity {
+public class Enrollment {
     
-    @JsonProperty("id")
-    public int id;
-    @JsonProperty("type")
-    public String type;
-    @JsonProperty("attributes")
-    public Attributes attributes;
-
+    @JsonProperty("student_id")
+    public int student;
+    @JsonProperty("activity_id")
+    public int activity;
+    
 }

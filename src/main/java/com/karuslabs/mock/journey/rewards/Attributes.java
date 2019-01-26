@@ -25,7 +25,6 @@ package com.karuslabs.mock.journey.rewards;
 
 import com.fasterxml.jackson.annotation.*;
 
-@JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
 "description",
 "points",
@@ -42,5 +41,7 @@ public class Attributes {
     public String redeemStatus;
     @JsonProperty("image-url")
     public String imageUrl;
+    @JsonProperty(value = "", required = false)
+    public Locker locker;
 
 }

@@ -25,6 +25,11 @@ package com.karuslabs.mock.journey;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import com.karuslabs.mock.journey.profile.Profile;
+
+import java.io.IOException;
+import java.util.Map;
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -33,10 +38,15 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class Main {
 
     public static final ObjectMapper MAPPER = new ObjectMapper();
+    public static final Map<Integer, String> AWARDS = Map.of(1, "Responsibility", 2, "Respect", 3, "Resilience", 4, "Integrity", 5, "Compassion");
+    
+    public static Map<Integer, Profile> profiles;
+    public static Imgur imgur = new Imgur("f63ed069bdd8272");
     
     
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         SpringApplication.run(Main.class, args);
+        profiles = Map.of(1, Main.MAPPER.readValue("staff.json", Profile.class), 2, Main.MAPPER.readValue("student.json", Profile.class));
     }
     
 }

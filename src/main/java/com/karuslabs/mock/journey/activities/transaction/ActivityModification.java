@@ -21,24 +21,54 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package com.karuslabs.mock.journey.activities;
+package com.karuslabs.mock.journey.activities.transaction;
 
 import com.fasterxml.jackson.annotation.*;
 
+import java.util.*;
 
-@JsonInclude(JsonInclude.Include.NON_NULL)
+
 @JsonPropertyOrder({
-    "id",
-    "type",
-    "attributes"
+    "staff_id",
+    "trans_type_id",
+    "title",
+    "description",
+    "event_datetime",
+    "duration_hours",
+    "num_required",
+    "points",
+    "award_type",
+    "mentor_groups"
 })
-public class Activity {
+public class ActivityModification {
+
+    @JsonProperty("staff_id")
+    public String staffId;
+    @JsonProperty("trans_type_id")
+    public String transTypeId;
+    @JsonProperty("title")
+    public String title;
+    @JsonProperty("description")
+    public String description;
+    @JsonProperty("event_datetime")
+    public String eventDatetime;
+    @JsonProperty("points")
+    public int points;
+    @JsonProperty("award_type")
+    public AwardType awardType;
+    @JsonProperty("mentor_groups")
+    public List<Integer> mentorGroups = new ArrayList<>();
+    @JsonIgnore
+    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
     
-    @JsonProperty("id")
-    public int id;
-    @JsonProperty("type")
-    public String type;
-    @JsonProperty("attributes")
-    public Attributes attributes;
+    @JsonAnyGetter
+    public Map<String, Object> getAdditionalProperties() {
+        return this.additionalProperties;
+    }
+
+    @JsonAnySetter
+    public void setAdditionalProperty(String name, Object value) {
+        this.additionalProperties.put(name, value);
+    }
 
 }

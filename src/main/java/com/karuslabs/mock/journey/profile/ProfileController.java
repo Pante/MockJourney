@@ -21,24 +21,22 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package com.karuslabs.mock.journey.activities;
+package com.karuslabs.mock.journey.profile;
 
-import com.fasterxml.jackson.annotation.*;
+import com.karuslabs.mock.journey.Main;
+
+import org.springframework.web.bind.annotation.*;
+
+import static org.springframework.web.bind.annotation.RequestMethod.GET;
 
 
-@JsonInclude(JsonInclude.Include.NON_NULL)
-@JsonPropertyOrder({
-    "id",
-    "type",
-    "attributes"
-})
-public class Activity {
+@RestController
+public class ProfileController {    
+
     
-    @JsonProperty("id")
-    public int id;
-    @JsonProperty("type")
-    public String type;
-    @JsonProperty("attributes")
-    public Attributes attributes;
-
+    @RequestMapping(path = "/user_info", method = GET)
+    public Profile view(@RequestParam("id") int id) {
+        return Main.profiles.get(id);
+    }
+    
 }

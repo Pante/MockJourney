@@ -21,24 +21,18 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package com.karuslabs.mock.journey.activities;
+package com.karuslabs.mock.journey.rewards;
 
-import com.fasterxml.jackson.annotation.*;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 
-@JsonInclude(JsonInclude.Include.NON_NULL)
-@JsonPropertyOrder({
-    "id",
-    "type",
-    "attributes"
-})
-public class Activity {
+public class Purchase {
     
-    @JsonProperty("id")
-    public int id;
-    @JsonProperty("type")
-    public String type;
-    @JsonProperty("attributes")
-    public Attributes attributes;
-
+    @JsonProperty("student_id")
+    public int student;
+    @JsonProperty("reward_catelogue_id")
+    public int reward;
+    @JsonProperty("quantity")
+    public int quantity;
+    
 }

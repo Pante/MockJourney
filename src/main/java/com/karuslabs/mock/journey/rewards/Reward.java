@@ -34,7 +34,7 @@ import com.fasterxml.jackson.annotation.*;
 public class Reward {
 
     @JsonProperty("id")
-    public String id;
+    public int id;
     @JsonProperty("type")
     public String type;
     @JsonProperty("attributes")

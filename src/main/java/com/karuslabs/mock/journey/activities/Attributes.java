@@ -25,7 +25,7 @@ package com.karuslabs.mock.journey.activities;
 
 import com.fasterxml.jackson.annotation.*;
 
-import java.util.List;
+import java.util.*;
 
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -64,9 +64,9 @@ public class Attributes {
     @JsonProperty("updated-at")
     public String updatedAt;
     @JsonProperty("activity-awards")
-    public List<ActivityAward> activityAwards = null;
+    public List<ActivityAward> activityAwards = new ArrayList<>();
     @JsonProperty("mentor-groups")
-    public List<Integer> mentorGroups = null;
+    public List<Integer> mentorGroups = new ArrayList<>();
     @JsonProperty("image-url")
     public String imageUrl;
 

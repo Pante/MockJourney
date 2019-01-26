@@ -21,54 +21,51 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package com.karuslabs.mock.journey;
+package com.karuslabs.mock.journey.mc;
+
+import com.karuslabs.mock.journey.Main;
 
 import java.io.IOException;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.locks.StampedLock;
+
+import org.springframework.http.*;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
+
+import static org.springframework.web.bind.annotation.RequestMethod.*;
 
 
-public abstract class Controller<T> {
+@RestController
+public class MCController {
     
-    protected Map<Integer, T> users = new ConcurrentHashMap<>();
-    protected StampedLock lock = new StampedLock();
-    protected String name;
-    protected Class<T> type;
+    private Map<String, Boolean> links = new ConcurrentHashMap<>();
     
     
-    public Controller(String name, Class<T> type) {
-        this.name = name;
-        this.type = type;
+    @RequestMapping(path = "/medical_certificates", method = GET)
+    public Map<String, Boolean> view() {
+        return links;
     }
     
     
-    protected T load(int id) throws IOException {
-        var stamp = lock.readLock();
-        try {
-            var data = users.get(id);
-            while (data == null) {
-                var write = lock.tryConvertToWriteLock(stamp);
-                if (write == 0L) {
-                    lock.unlockRead(stamp);
-                    stamp = lock.writeLock();
-                    
-                } else {
-                    stamp = write;
-                    data = Main.MAPPER.readValue(getClass().getClassLoader().getResourceAsStream(name), type);
-                    patch(data);
-                    users.put(id, data);
-                }
-            }
+    @RequestMapping(path = "/medical_certificates", method = POST)
+    public ResponseEntity<String> post(@RequestParam("file") MultipartFile file) throws IOException, InterruptedException {
+        links.put(Main.imgur.upload(file.getBytes()), false);
         
-            return data;
-            
-        } finally {
-            lock.unlock(stamp);
-        }
+        return new ResponseEntity<>(HttpStatus.OK);
     }
     
-    protected void patch(T data) {
+    
+    @RequestMapping(path = "/medical_certificates/approve", method = PATCH)
+    public ResponseEntity<String> approve(Approval approval) throws IOException, InterruptedException {
+        links.put(approval.link, true);
+        
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+    
+    public static class Approval {
+        
+        public String link;
         
     }
     

@@ -21,24 +21,37 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package com.karuslabs.mock.journey.activities;
+package com.karuslabs.mock.journey.rewards;
 
-import com.fasterxml.jackson.annotation.*;
+import com.karuslabs.mock.journey.rewards.transaction.RewardModification;
+import java.util.function.Supplier;
 
 
-@JsonInclude(JsonInclude.Include.NON_NULL)
-@JsonPropertyOrder({
-    "id",
-    "type",
-    "attributes"
-})
-public class Activity {
+public class RewardSupplier implements Supplier<Reward> {
     
-    @JsonProperty("id")
     public int id;
-    @JsonProperty("type")
-    public String type;
-    @JsonProperty("attributes")
-    public Attributes attributes;
-
+    public RewardModification reward;
+    public String link;
+    
+    
+    public RewardSupplier(int id, RewardModification reward, String link) {
+        this.id = id;
+        this.reward = reward;
+        this.link = link;
+    }
+    
+    
+    @Override
+    public Reward get() {
+        var created = new Reward();
+        created.id = id;
+        created.type = "";
+        created.attributes.description = reward.description;
+        created.attributes.points = reward.points;
+        created.attributes.redeemStatus = "Eligible";
+        created.attributes.imageUrl = link;
+        
+        return created;
+    }
+    
 }

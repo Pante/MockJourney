@@ -21,24 +21,37 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package com.karuslabs.mock.journey.activities;
+package com.karuslabs.mock.journey;
 
-import com.fasterxml.jackson.annotation.*;
+import java.io.IOException;
+import java.net.URI;
+import java.net.http.*;
+import java.net.http.HttpRequest.BodyPublishers;
+import java.net.http.HttpResponse.BodyHandlers;
+import java.nio.charset.Charset;
 
 
-@JsonInclude(JsonInclude.Include.NON_NULL)
-@JsonPropertyOrder({
-    "id",
-    "type",
-    "attributes"
-})
-public class Activity {
+public class Imgur {
     
-    @JsonProperty("id")
-    public int id;
-    @JsonProperty("type")
-    public String type;
-    @JsonProperty("attributes")
-    public Attributes attributes;
-
+    private HttpClient client = HttpClient.newHttpClient();
+    private String id;
+    
+    
+    public Imgur(String id) {
+        this.id = id;
+    }
+    
+    
+    public String upload(byte[] image) throws IOException, InterruptedException {
+        var post = HttpRequest.newBuilder()
+                                 .uri(URI.create("https://api.imgur.com/3/image"))
+                                 .header("Authorization", "Client-ID " + id)
+                                 .POST(BodyPublishers.ofByteArray(image)).build();
+        
+        var response = client.send(post, BodyHandlers.ofString(Charset.forName("UTF-8")));        
+        return Main.MAPPER.readTree(response.body()).get("data").get("link").asText();
+    }
+    
+    
+    
 }
