@@ -28,8 +28,12 @@
             "attributes": {
                 "description": "2-in-1 Retractable Charging Cable",
                 "points": 30,
-                "redeem-status": "Redeemed",
-                "image-url": "https://onejourney-668a1.appspot.com.storage.googleapis.com/reward_catalogue_images/3/reward_catalogue3.jpeg"
+                "redeem-status": "Collection",
+                "image-url": "https://onejourney-668a1.appspot.com.storage.googleapis.com/reward_catalogue_images/3/reward_catalogue3.jpeg",
+                "locker": {
+                    "id": 1,
+                    "otp": "152566"
+                }
             }
         },
 

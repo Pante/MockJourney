@@ -26,7 +26,7 @@ package com.karuslabs.mock.journey.rewards;
 
 public class Locker {
     
-    public int number;
+    public int id;
     public String otp;
     
 }

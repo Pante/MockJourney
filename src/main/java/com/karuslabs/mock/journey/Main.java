@@ -46,7 +46,9 @@ public class Main {
     
     public static void main(String[] args) throws IOException {
         SpringApplication.run(Main.class, args);
-        profiles = Map.of(1, Main.MAPPER.readValue("staff.json", Profile.class), 2, Main.MAPPER.readValue("student.json", Profile.class));
+        profiles = Map.of(1, Main.MAPPER.readValue(Main.class.getClassLoader().getResourceAsStream("staff.json"), Profile.class), 
+                          2, Main.MAPPER.readValue(Main.class.getClassLoader().getResourceAsStream("student.json"), Profile.class)
+                        );
     }
     
 }

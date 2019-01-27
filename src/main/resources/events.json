@@ -15,9 +15,14 @@
                 "updated-at": "2019-01-10T09:00:34.000Z",
                 "activity-awards": [
                     {
-                        "id": 79,
-                        "to-award": 1,
-                        "award-name": "Compassion"
+                        "id": 3,
+                        "to-award": 6,
+                        "award-name": "Resilience"
+                    },
+                    {
+                        "id": 4,
+                        "to-award": 3,
+                        "award-name": "Integrity"
                     }
                 ],
                 "mentor-groups": [1, 2, 3, 4, 5],
@@ -131,9 +136,9 @@
                 "updated-at": "2019-01-04T09:17:20.000Z",
                 "activity-awards": [
                     {
-                        "id": 75,
-                        "to-award": 1,
-                        "award-name": "Compassion"
+                        "id": 1,
+                        "to-award": 4,
+                        "award-name": "Responsibility"
                     }
                 ],
                 "mentor-groups": [
@@ -211,8 +216,8 @@
                 "updated-at": "2018-01-09T07:45:21.000Z",
                 "activity-awards": [
                     {
-                        "id": 77,
-                        "to-award": 1,
+                        "id": 5,
+                        "to-award": 3,
                         "award-name": "Compassion"
                     }
                 ],
@@ -255,9 +260,9 @@
                 "updated-at": "2017-12-03T08:09:13.000Z",
                 "activity-awards": [
                     {
-                        "id": 76,
+                        "id": 2,
                         "to-award": 1,
-                        "award-name": "Compassion"
+                        "award-name": "Respect"
                     }
                 ],
                 "mentor-groups": [
@@ -317,9 +322,9 @@
                 "updated-at": "2017-10-30T09:17:20.000Z",
                 "activity-awards": [
                     {
-                        "id": 75,
-                        "to-award": 1,
-                        "award-name": "Compassion"
+                        "id": 2,
+                        "to-award": 6,
+                        "award-name": "Respect"
                     }
                 ],
                 "mentor-groups": [
@@ -361,7 +366,7 @@
                 "updated-at": "2017-08-24T09:17:20.000Z",
                 "activity-awards": [
                     {
-                        "id": 75,
+                        "id": 5,
                         "to-award": 1,
                         "award-name": "Compassion"
                     }
@@ -405,9 +410,9 @@
                 "updated-at": "2017-07-30T09:17:20.000Z",
                 "activity-awards": [
                     {
-                        "id": 75,
+                        "id": 1,
                         "to-award": 1,
-                        "award-name": "Compassion"
+                        "award-name": "Responsibility"
                     }
                 ],
                 "mentor-groups": [
@@ -449,9 +454,9 @@
                 "updated-at": "2017-08-23T15:05:54.000Z",
                 "activity-awards": [
                     {
-                        "id": 70,
-                        "to-award": 1,
-                        "award-name": "Compassion"
+                        "id": 2,
+                        "to-award": 4,
+                        "award-name": "Respect"
                     }
                 ],
                 "mentor-groups": [
@@ -493,9 +498,9 @@
                 "updated-at": "2017-08-23T15:05:54.000Z",
                 "activity-awards": [
                     {
-                        "id": 70,
-                        "to-award": 1,
-                        "award-name": "Compassion"
+                        "id": 3,
+                        "to-award": 8,
+                        "award-name": "Resilience"
                     }
                 ],
                 "mentor-groups": [
@@ -555,7 +560,7 @@
                 "updated-at": "2017-04-03T15:05:54.000Z",
                 "activity-awards": [
                     {
-                        "id": 70,
+                        "id": 5,
                         "to-award": 1,
                         "award-name": "Compassion"
                     }
@@ -636,9 +641,9 @@
                 "updated-at": "2016-12-16T15:00:13.000Z",
                 "activity-awards": [
                     {
-                        "id": 69,
+                        "id": 4,
                         "to-award": 1,
-                        "award-name": "Compassion"
+                        "award-name": "Integrity"
                     }
                 ],
                 "mentor-groups": [
@@ -680,7 +685,7 @@
                 "updated-at": "2017-10-27T15:00:13.000Z",
                 "activity-awards": [
                     {
-                        "id": 69,
+                        "id": 5,
                         "to-award": 1,
                         "award-name": "Compassion"
                     }
@@ -778,7 +783,7 @@
                 "updated-at": "2017-07-08T09:17:20.000Z",
                 "activity-awards": [
                     {
-                        "id": 75,
+                        "id": 5,
                         "to-award": 1,
                         "award-name": "Compassion"
                     }
@@ -822,7 +827,7 @@
                 "updated-at": "2019-06-14T09:00:34.000Z",
                 "activity-awards": [
                     {
-                        "id": 79,
+                        "id": 5,
                         "to-award": 1,
                         "award-name": "Compassion"
                     }
@@ -846,9 +851,9 @@
                 "updated-at": "2016-04-29T08:09:13.000Z",
                 "activity-awards": [
                     {
-                        "id": 76,
+                        "id": 2,
                         "to-award": 1,
-                        "award-name": "Compassion"
+                        "award-name": "Respect"
                     }
                 ],
                 "mentor-groups": [
@@ -890,9 +895,9 @@
                 "updated-at": "2017-01-15T15:00:13.000Z",
                 "activity-awards": [
                     {
-                        "id": 69,
+                        "id": 3,
                         "to-award": 1,
-                        "award-name": "Compassion"
+                        "award-name": "Resilience"
                     }
                 ],
                 "mentor-groups": [
@@ -934,9 +939,9 @@
                 "updated-at": "2017-08-23T15:00:13.000Z",
                 "activity-awards": [
                     {
-                        "id": 69,
+                        "id": 4,
                         "to-award": 1,
-                        "award-name": "Compassion"
+                        "award-name": "Integrity"
                     }
                 ],
                 "mentor-groups": [

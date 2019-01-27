@@ -28,9 +28,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class Enrollment {
     
-    @JsonProperty("student_id")
+    @JsonProperty("student-no")
     public int student;
-    @JsonProperty("activity_id")
+    @JsonProperty("activity-id")
     public int activity;
     
 }

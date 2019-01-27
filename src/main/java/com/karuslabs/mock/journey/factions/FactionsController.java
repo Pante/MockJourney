@@ -32,6 +32,7 @@ import org.springframework.web.bind.annotation.*;
 import static org.springframework.web.bind.annotation.RequestMethod.*;
 
 
+@CrossOrigin
 @RestController
 public class FactionsController extends Controller<Factions> {    
     

@@ -27,7 +27,7 @@ import com.karuslabs.mock.journey.Main;
 
 import java.io.IOException;
 import java.util.*;
-import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 import org.springframework.http.*;
 import org.springframework.web.bind.annotation.*;
@@ -36,29 +36,30 @@ import org.springframework.web.multipart.MultipartFile;
 import static org.springframework.web.bind.annotation.RequestMethod.*;
 
 
+@CrossOrigin
 @RestController
 public class MCController {
     
-    private Map<String, Boolean> links = new ConcurrentHashMap<>();
+    private List<String> links = new CopyOnWriteArrayList<>();
     
     
     @RequestMapping(path = "/medical_certificates", method = GET)
-    public Map<String, Boolean> view() {
+    public List<String> view() {
         return links;
     }
     
     
     @RequestMapping(path = "/medical_certificates", method = POST)
     public ResponseEntity<String> post(@RequestParam("file") MultipartFile file) throws IOException, InterruptedException {
-        links.put(Main.imgur.upload(file.getBytes()), false);
+        links.add(Main.imgur.upload(file.getBytes()));
         
         return new ResponseEntity<>(HttpStatus.OK);
     }
     
     
-    @RequestMapping(path = "/medical_certificates/approve", method = PATCH)
-    public ResponseEntity<String> approve(Approval approval) throws IOException, InterruptedException {
-        links.put(approval.link, true);
+    @RequestMapping(path = "/medical_certificates?link", method = DELETE)
+    public ResponseEntity<String> approve(@RequestParam("link") String link) throws IOException, InterruptedException {
+        links.remove(link);
         
         return new ResponseEntity<>(HttpStatus.OK);
     }

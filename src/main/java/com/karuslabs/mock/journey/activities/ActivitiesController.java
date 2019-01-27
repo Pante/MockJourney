@@ -39,6 +39,7 @@ import static java.util.stream.Collectors.toMap;
 import static org.springframework.web.bind.annotation.RequestMethod.*;
 
 
+@CrossOrigin
 @RestController
 public class ActivitiesController extends Controller<Activities> {    
     
@@ -104,58 +105,51 @@ public class ActivitiesController extends Controller<Activities> {
         }
     }
     
-    @RequestMapping(path = "/activities/edit", method = PATCH)
+    @RequestMapping(path = "/activities", method = PATCH)
     public ResponseEntity<String> edit(@RequestParam("activity") String content, @RequestParam(name = "file", required = false) MultipartFile file) throws IOException, InterruptedException {
         var edition = Main.MAPPER.readValue(content, Edition.class);
         var stamp = lock.writeLock();
         try {
-            if (!edition.delete) {
-                return edit(edition, file);
-            
-            } else {
-                return delete(edition);
+            String link = null;
+            if (file != null) {
+                link = Main.imgur.upload(file.getBytes());
             }
+
+            var supplier = suppliers.get(edition.id);
+            if (supplier == null) {
+                suppliers.put(edition.id, new ActivitySupplier(edition.id, edition.activity, link));
+
+            } else {
+                if (link != null) {
+                    supplier.link = link;
+                }
+                supplier.activity = edition.activity;
+            }
+
+            for (var activities : users.values()) {
+                patch(activities);
+            }
+
+            return new ResponseEntity<>(HttpStatus.OK);
             
         } finally {
             lock.unlock(stamp);
         }
     }
-   
-    protected ResponseEntity<String> edit(Edition edition, MultipartFile file) throws IOException, InterruptedException {
-        String link = null;
-        if (file != null) {
-            link = Main.imgur.upload(file.getBytes());
-        }
 
-        var supplier = suppliers.get(edition.id);
-        if (supplier == null) {
-            suppliers.put(edition.id, new ActivitySupplier(edition.id, edition.activity, link));
-            
-        } else {
-            if (link != null) {
-                supplier.link = link;
-            }
-            supplier.activity = edition.activity;
-        }
-
-        for (var activities : users.values()) {
-            patch(activities);
-        }
-        
-        return new ResponseEntity<>(HttpStatus.OK);
-    }
     
-    protected ResponseEntity<String> delete(Edition edition) {
+    @RequestMapping(path = "/activities", method = DELETE)
+    public ResponseEntity<String> delete(@RequestParam("id") int id) {
         var deleted = false;
 
-        if (suppliers.remove(edition.id) != null) {
+        if (suppliers.remove(id) != null) {
             deleted = true;
         }
 
         for (var activities : users.values()) {
             for (var iterator = activities.data.iterator(); iterator.hasNext();) {
                 var activity = iterator.next();
-                if (activity.id == edition.id) {
+                if (activity.id == id) {
                     iterator.remove();
                     deleted = true;
                 }

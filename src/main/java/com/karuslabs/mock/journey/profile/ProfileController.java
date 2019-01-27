@@ -30,6 +30,7 @@ import org.springframework.web.bind.annotation.*;
 import static org.springframework.web.bind.annotation.RequestMethod.GET;
 
 
+@CrossOrigin
 @RestController
 public class ProfileController {    
 

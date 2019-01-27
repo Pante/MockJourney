@@ -23,12 +23,11 @@
  */
 package com.karuslabs.mock.journey.rewards;
 
-import com.karuslabs.mock.journey.rewards.transaction.Edition;
-import com.karuslabs.mock.journey.rewards.transaction.Creation;
+import com.karuslabs.mock.journey.rewards.transaction.*;
 import com.karuslabs.mock.journey.*;
 
 import java.io.IOException;
-import java.util.Map;
+import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -41,6 +40,7 @@ import static java.util.stream.Collectors.toMap;
 import static org.springframework.web.bind.annotation.RequestMethod.*;
 
 
+@CrossOrigin
 @RestController
 public class RewardsController extends Controller<Rewards> {    
     
@@ -55,7 +55,7 @@ public class RewardsController extends Controller<Rewards> {
     }
     
     
-    @RequestMapping(path = "/reward_catalogues", method = GET)
+    @RequestMapping(path = "/reward_catelogues", method = GET)
     public Rewards view(@RequestParam("id") int id) throws IOException {
         return load(id);
     }
@@ -107,58 +107,51 @@ public class RewardsController extends Controller<Rewards> {
     }
     
     
-    @RequestMapping(path = "/reward_catelogues/edit", method = PATCH)
+    @RequestMapping(path = "/reward_catelogues", method = PATCH)
     public ResponseEntity<String> edit(@RequestParam("reward") String content, @RequestParam(name = "file", required = false) MultipartFile file) throws IOException, InterruptedException {
         var edition = Main.MAPPER.readValue(content, Edition.class);
         var stamp = lock.writeLock();
         try {
-            if (!edition.delete) {
-                return edit(edition, file);
-            
-            } else {
-                return delete(edition);
+            String link = null;
+            if (file != null) {
+                link = Main.imgur.upload(file.getBytes());
             }
+
+            var supplier = suppliers.get(edition.id);
+            if (supplier == null) {
+                suppliers.put(edition.id, new RewardSupplier(edition.id, edition.reward, link));
+
+            } else {
+                if (link != null) {
+                    supplier.link = link;
+                }
+                supplier.reward = edition.reward;
+            }
+
+            for (var activities : users.values()) {
+                patch(activities);
+            }
+
+            return new ResponseEntity<>(HttpStatus.OK);
             
         } finally {
             lock.unlock(stamp);
         }
     }
-   
-    protected ResponseEntity<String> edit(Edition edition, MultipartFile file) throws IOException, InterruptedException {
-        String link = null;
-        if (file != null) {
-            link = Main.imgur.upload(file.getBytes());;
-        }
 
-        var supplier = suppliers.get(edition.id);
-        if (supplier == null) {
-            suppliers.put(edition.id, new RewardSupplier(edition.id, edition.reward, link));
-            
-        } else {
-            if (link != null) {
-                supplier.link = link;
-            }
-            supplier.reward = edition.reward;
-        }
-
-        for (var activities : users.values()) {
-            patch(activities);
-        }
-        
-        return new ResponseEntity<>(HttpStatus.OK);
-    }
     
-    protected ResponseEntity<String> delete(Edition edition) {
+    @RequestMapping(path = "/reward_catelogues", method = DELETE)
+    public ResponseEntity<String> delete(@RequestParam("id") int id) {
         var deleted = false;
 
-        if (suppliers.remove(edition.id) != null) {
+        if (suppliers.remove(id) != null) {
             deleted = true;
         }
 
         for (var activities : users.values()) {
             for (var iterator = activities.data.iterator(); iterator.hasNext();) {
                 var activity = iterator.next();
-                if (activity.id == edition.id) {
+                if (activity.id == id) {
                     iterator.remove();
                     deleted = true;
                 }
@@ -170,39 +163,36 @@ public class RewardsController extends Controller<Rewards> {
     
     
     @RequestMapping(path = "/reward_transactions", method = POST)
-    public ResponseEntity<String> purchase(@RequestBody Purchase purchase) throws IOException {
-        var rewards = load(purchase.student);
-        var profile = Main.profiles.get(purchase.student);
+    public ResponseEntity<String> redeem(@RequestBody Redemption redemption) throws IOException {
+        var rewards = load(redemption.student).data.stream().collect(toMap(reward -> reward.id, reward -> reward));
+        var profile = Main.profiles.get(redemption.student);
         
-        var stamp = lock.readLock();
+        var stamp = lock.writeLock();
         try {
-            for (var reward : rewards.data) {
-                if (reward.id == purchase.reward && !reward.attributes.redeemStatus.equals("Redeemed")) {
-                    var cost = reward.attributes.points * purchase.quantity;
-                    if (profile.data.attributes.points < cost) {
-                        return new ResponseEntity<>("Insufficent Bytes", HttpStatus.UNPROCESSABLE_ENTITY);
-                    }
-                    
-                    var original = reward.attributes.redeemStatus;
-                    while (reward.attributes.redeemStatus.equals(original)) {
-                        var write = lock.tryConvertToWriteLock(stamp);
-                        if (write != 0L) {
-                            stamp = write;
-                         
-                            profile.data.attributes.points -= cost;
-                            reward.attributes.redeemStatus = "Redeemed";
-                            // TODO submit request to POP
-                            return new ResponseEntity(HttpStatus.OK);
-                        
-                        } else {
-                            lock.unlockRead(stamp);
-                            stamp = lock.writeLock();
-                        }
+            var cost = 0;
+            var redeemed = new ArrayList<Reward>();
+            for (var item : redemption.items) {
+                var reward = rewards.get(item.id);
+                if (reward != null) {
+                    cost += reward.attributes.points * item.quantity;
+                    redeemed.add(reward);
+                    if (!reward.attributes.redeemStatus.equals("Eligible")) {
+                        return new ResponseEntity<>("Unable to redeem reward", HttpStatus.UNPROCESSABLE_ENTITY);
                     }
                 }
+            }
+            
+            if (profile.data.attributes.redemptionBalance < cost) {
+                return new ResponseEntity<>("Insufficent Bytes", HttpStatus.UNPROCESSABLE_ENTITY);
+            }
+            
+            profile.data.attributes.redemptionBalance -= cost;
+            for (var reward : redeemed) {
+                reward.attributes.redeemStatus = "Pending";
             }    
-        
-            return new ResponseEntity<>("Unable to redeem reward", HttpStatus.UNPROCESSABLE_ENTITY);
+            
+            return new ResponseEntity<>(HttpStatus.OK);
+            
             
         } finally {
             lock.unlock(stamp);

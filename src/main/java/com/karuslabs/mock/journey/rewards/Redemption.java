@@ -25,14 +25,24 @@ package com.karuslabs.mock.journey.rewards;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.List;
 
-public class Purchase {
+
+public class Redemption {
     
-    @JsonProperty("student_id")
+    @JsonProperty("student-no")
     public int student;
-    @JsonProperty("reward_catelogue_id")
-    public int reward;
-    @JsonProperty("quantity")
-    public int quantity;
+    @JsonProperty("items")
+    public List<Item> items;
+    
+    
+    
+    public static class Item {
+        @JsonProperty("reward-catelogue-id")
+        public int id;
+        @JsonProperty("quantity")
+        public int quantity;
+    }
+    
     
 }

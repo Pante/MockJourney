@@ -28,7 +28,6 @@ import com.fasterxml.jackson.annotation.*;
 
 @JsonPropertyOrder({
     "id",
-    "delete",
     "activity"
 })
 public class Edition {
@@ -36,10 +35,7 @@ public class Edition {
     @JsonProperty("id")
     public int id;
     
-    @JsonProperty(value = "delete", required = false)
-    public boolean delete;
-    
-    @JsonProperty(value = "activity", required = false)
+    @JsonProperty("activity")
     public ActivityModification activity;
 
 }

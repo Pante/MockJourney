@@ -29,34 +29,34 @@ import java.util.*;
 
 
 @JsonPropertyOrder({
-    "staff_id",
-    "trans_type_id",
+    "staff-id",
+    "trans-type-id",
     "title",
     "description",
-    "event_datetime",
-    "duration_hours",
-    "num_required",
+    "event-datetime",
+    "duration-hours",
+    "num-required",
     "points",
-    "award_type",
-    "mentor_groups"
+    "award-type",
+    "mentor-groups"
 })
 public class ActivityModification {
 
-    @JsonProperty("staff_id")
+    @JsonProperty("staff-id")
     public String staffId;
-    @JsonProperty("trans_type_id")
+    @JsonProperty("trans-type-id")
     public String transTypeId;
     @JsonProperty("title")
     public String title;
     @JsonProperty("description")
     public String description;
-    @JsonProperty("event_datetime")
+    @JsonProperty("event-datetime")
     public String eventDatetime;
     @JsonProperty("points")
     public int points;
-    @JsonProperty("award_type")
+    @JsonProperty("award-type")
     public AwardType awardType;
-    @JsonProperty("mentor_groups")
+    @JsonProperty("mentor-groups")
     public List<Integer> mentorGroups = new ArrayList<>();
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();

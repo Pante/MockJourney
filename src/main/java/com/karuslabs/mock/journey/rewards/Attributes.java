@@ -26,10 +26,11 @@ package com.karuslabs.mock.journey.rewards;
 import com.fasterxml.jackson.annotation.*;
 
 @JsonPropertyOrder({
-"description",
-"points",
-"redeem-status",
-"image-url"
+    "description",
+    "points",
+    "redeem-status",
+    "image-url",
+    "locker"
 })
 public class Attributes {
 
@@ -41,7 +42,7 @@ public class Attributes {
     public String redeemStatus;
     @JsonProperty("image-url")
     public String imageUrl;
-    @JsonProperty(value = "", required = false)
+    @JsonProperty(value = "locker", required = false)
     public Locker locker;
 
 }
