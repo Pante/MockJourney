@@ -31,15 +31,19 @@ import java.net.URI;
 import java.net.http.*;
 import java.nio.charset.Charset;
 import java.util.List;
+import java.util.Map;
+import java.util.concurrent.atomic.AtomicInteger;
 
 import org.apache.http.entity.mime.MultipartEntityBuilder;
 
 import static java.util.stream.Collectors.toList;
+import static java.util.stream.Collectors.toMap;
 
 
 public class ELocker {
     
     private HttpClient client;
+    private AtomicInteger counter;
     private String mobile;
     private String password;
     private String token;
@@ -47,6 +51,7 @@ public class ELocker {
     
     public ELocker(String mobile, String password) {
         this.client = HttpClient.newHttpClient();
+        this.counter = new AtomicInteger(5);
         this.mobile = mobile;
         this.password = password;
         this.token = null;
@@ -70,7 +75,7 @@ public class ELocker {
     }
     
     
-    public List<Notification> poll() throws IOException, InterruptedException {
+    public Map<Integer, Notification> poll() throws IOException, InterruptedException {
         if (token == null) {
             login();
         }
@@ -82,10 +87,9 @@ public class ELocker {
         }
         
         var transactions = Main.MAPPER.readValue(response.body(), Transactions.class);
-        return transactions.data.transactions.stream().filter(transaction -> transaction.status == 1 && transaction.recipientEmail.equalsIgnoreCase("ict-fintechdemo1@connect.np.edu.sg")).map(transaction ->
-            new Notification("You have a reward pending collection. Kindly proceed to eLocker @ 31-05 for collection by " + transaction.dateOverdued 
-                           + ". Your OTP is: " + transaction.otpNumber)
-        ).collect(toList());
+        return transactions.data.transactions.stream().filter(transaction -> transaction.status == 1 && transaction.recipientEmail.equalsIgnoreCase("ict-fintechdemo1@connect.np.edu.sg"))
+                .collect(toMap(a -> counter.incrementAndGet(), transaction -> new Notification(counter.get(),"You have a reward pending collection. Kindly proceed to eLocker @ 31-05 for collection by " + transaction.dateOverdued 
+                           + ". Your OTP is: " + transaction.otpNumber)));
     }
     
     private HttpRequest post() throws IOException {

@@ -28,46 +28,70 @@ import com.karuslabs.mock.journey.Main;
 
 import java.io.IOException;
 import java.util.*;
-import java.util.concurrent.ConcurrentHashMap;
+import static java.util.stream.Collectors.toMap;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 
 import org.springframework.web.bind.annotation.*;
 
-import static org.springframework.web.bind.annotation.RequestMethod.GET;
+import static org.springframework.web.bind.annotation.RequestMethod.*;
+
 
 @CrossOrigin
 @RestController
-public class NotificationController extends Controller<List<Notification>> {
-    
-    private Map<Integer, List<Notification>> users = new ConcurrentHashMap<>();
-
+public class NotificationController extends Controller<Map<Integer, Notification>> {
     
     public NotificationController() throws IOException {
-        super("notifications", null);
+        super("notifications.json", null);
         load(1);
         load(2);
     }
     
     
     @Override
-    protected List<Notification> deserialize() throws IOException {
-        return new ArrayList<>(Arrays.asList(Main.MAPPER.readValue(getClass().getClassLoader().getResourceAsStream(name), Notification[].class)));
+    protected Map<Integer, Notification> deserialize() throws IOException {
+        var notifications = Arrays.asList(Main.MAPPER.readValue(getClass().getClassLoader().getResourceAsStream(name), Notification[].class));
+        return notifications.stream().collect(toMap(notification -> notification.id, notification -> notification));
     }
     
     
     @RequestMapping(path = "/notifications", method = GET)
     public List<Notification> view(@RequestParam("id") int id) throws IOException, InterruptedException {
-        var stamp = lock.readLock();
+        var stamp = lock.writeLock();
         try {
             var notifications = users.get(id);
             if (Main.enable) {
-                notifications.addAll(Main.locker.poll());
+                notifications.putAll(Main.locker.poll());
             }
         
-            return notifications;
+            return new ArrayList<>(notifications.values());
                     
         } finally {
             lock.unlock(stamp);
         }
+    }
+    
+    
+    @RequestMapping(path = "/notifications", method = PATCH)
+    public ResponseEntity<String> read(@RequestBody Body body) throws IOException, InterruptedException {
+        var stamp = lock.readLock();
+        try {
+            var notifications = users.get(body.id);
+            notifications.get(body.notification).read = true;
+        
+            return new ResponseEntity<>(HttpStatus.OK);
+                    
+        } finally {
+            lock.unlock(stamp);
+        }
+    }
+    
+    
+    public static class Body {
+        
+        public int id;
+        public int notification;
+        
     }
     
 }

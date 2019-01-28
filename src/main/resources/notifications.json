@@ -1,25 +1,30 @@
 [   
     {
+        "id": 1,
         "message": "You have successfully enrolled in an event!",
         "date": "2018-1-15T20:00:34.000Z",
         "read": false
     },
     {
+        "id": 2,
         "message": "Check out the new events that has been added",
         "date": "2019-1-13T20:00:34.000Z",
         "read": false
     },
     {
+        "id": 3,
         "message": "Happy New Year!",
         "date": "2019-1-10T20:00:34.000Z",
         "read": true
     },
     {
+        "id": 4,
         "message": "MC submission has been enabled!",
         "date": "2018-1-10T20:00:34.000Z",
         "read": true
     },
     {
+        "id": 5,
         "message": "Welcome back to school!",
         "date": "2018-10-15T09:00:34.000Z",
         "read": false

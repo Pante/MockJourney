@@ -23,18 +23,31 @@
  */
 package com.karuslabs.mock.journey.notifiacations;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 
 public class Notification {
     
+    @JsonProperty("id")
+    public int id;
+    @JsonProperty("message")
     public String message;
+    @JsonProperty("date")
     public String date;
+    @JsonProperty("read")
     public boolean read;
     
     
-    public Notification(String message) {
+    public Notification() {
+        
+    }
+    
+    
+    public Notification(int id, String message) {
+        this.id = id;
         this.message = message;
         this.date = DateTimeFormatter.ISO_LOCAL_DATE_TIME.format(LocalDateTime.now());
         this.read = false;
