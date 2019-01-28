@@ -21,59 +21,53 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package com.karuslabs.mock.journey;
+package com.karuslabs.mock.journey.notifiacations;
+
+import com.karuslabs.mock.journey.Controller;
+import com.karuslabs.mock.journey.Main;
 
 import java.io.IOException;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.locks.StampedLock;
 
+import org.springframework.web.bind.annotation.*;
 
-public abstract class Controller<T> {
+import static org.springframework.web.bind.annotation.RequestMethod.GET;
+
+@CrossOrigin
+@RestController
+public class NotificationController extends Controller<List<Notification>> {
     
-    protected Map<Integer, T> users = new ConcurrentHashMap<>();
-    protected StampedLock lock = new StampedLock();
-    protected String name;
-    protected Class<T> type;
+    private Map<Integer, List<Notification>> users = new ConcurrentHashMap<>();
+
     
-    
-    public Controller(String name, Class<T> type) {
-        this.name = name;
-        this.type = type;
+    public NotificationController() throws IOException {
+        super("notifications", null);
+        load(1);
+        load(2);
     }
     
     
-    protected T load(int id) throws IOException {
+    @Override
+    protected List<Notification> deserialize() throws IOException {
+        return new ArrayList<>(Arrays.asList(Main.MAPPER.readValue(getClass().getClassLoader().getResourceAsStream(name), Notification[].class)));
+    }
+    
+    
+    @RequestMapping(path = "/notifications", method = GET)
+    public List<Notification> view(@RequestParam("id") int id) throws IOException, InterruptedException {
         var stamp = lock.readLock();
         try {
-            var data = users.get(id);
-            while (data == null) {
-                var write = lock.tryConvertToWriteLock(stamp);
-                if (write == 0L) {
-                    lock.unlockRead(stamp);
-                    stamp = lock.writeLock();
-                    
-                } else {
-                    stamp = write;
-                    data = deserialize();
-                    patch(data);
-                    users.put(id, data);
-                }
+            var notifications = users.get(id);
+            if (Main.enable) {
+                notifications.addAll(Main.locker.poll());
             }
         
-            return data;
-            
+            return notifications;
+                    
         } finally {
             lock.unlock(stamp);
         }
-    }
-    
-    protected T deserialize() throws IOException {
-        return Main.MAPPER.readValue(getClass().getClassLoader().getResourceAsStream(name), type);
-    }
-    
-    protected void patch(T data) {
-        
     }
     
 }

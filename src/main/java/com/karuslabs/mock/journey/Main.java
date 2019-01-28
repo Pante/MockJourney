@@ -24,10 +24,11 @@
 package com.karuslabs.mock.journey;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.karuslabs.mock.journey.elocker.ELocker;
 
 import com.karuslabs.mock.journey.profile.Profile;
 
-import java.io.IOException;
+import java.io.*;
 import java.util.Map;
 
 import org.springframework.boot.SpringApplication;
@@ -41,14 +42,22 @@ public class Main {
     public static final Map<Integer, String> AWARDS = Map.of(1, "Responsibility", 2, "Respect", 3, "Resilience", 4, "Integrity", 5, "Compassion");
     
     public static Map<Integer, Profile> profiles;
-    public static Imgur imgur = new Imgur("f63ed069bdd8272");
+    public static Imgur imgur;
+    public static ELocker locker;
+    public static boolean enable;
     
     
     public static void main(String[] args) throws IOException {
-        SpringApplication.run(Main.class, args);
+        var document = MAPPER.readTree(new File("./credentials.json"));
+        imgur = new Imgur(document.get("imgur").asText());
+        locker = new ELocker(document.get("elocker").asText(), document.get("elocker").asText());
+        enable = document.get("enable").asBoolean();
+        
         profiles = Map.of(1, Main.MAPPER.readValue(Main.class.getClassLoader().getResourceAsStream("staff.json"), Profile.class), 
                           2, Main.MAPPER.readValue(Main.class.getClassLoader().getResourceAsStream("student.json"), Profile.class)
                         );
+                
+        SpringApplication.run(Main.class, args);
     }
     
 }
