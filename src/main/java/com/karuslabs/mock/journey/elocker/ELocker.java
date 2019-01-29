@@ -24,7 +24,7 @@
 package com.karuslabs.mock.journey.elocker;
 
 import com.karuslabs.mock.journey.Main;
-import com.karuslabs.mock.journey.notifiacations.Notification;
+import com.karuslabs.mock.journey.mail.Mail;
 
 import java.io.*;
 import java.net.URI;
@@ -75,7 +75,7 @@ public class ELocker {
     }
     
     
-    public Map<Integer, Notification> poll() throws IOException, InterruptedException {
+    public Map<Integer, Mail> poll() throws IOException, InterruptedException {
         if (token == null) {
             login();
         }
@@ -88,7 +88,7 @@ public class ELocker {
         
         var transactions = Main.MAPPER.readValue(response.body(), Transactions.class);
         return transactions.data.transactions.stream().filter(transaction -> transaction.status == 1 && transaction.recipientEmail.equalsIgnoreCase("ict-fintechdemo1@connect.np.edu.sg"))
-                .collect(toMap(a -> counter.incrementAndGet(), transaction -> new Notification(counter.get(),"You have a reward pending collection. Kindly proceed to eLocker @ 31-05 for collection by " + transaction.dateOverdued 
+                .collect(toMap(a -> counter.incrementAndGet(), transaction -> new Mail(counter.get(),"You have a reward pending collection. Kindly proceed to eLocker @ 31-05 for collection by " + transaction.dateOverdued 
                            + ". Your OTP is: " + transaction.otpNumber)));
     }
     

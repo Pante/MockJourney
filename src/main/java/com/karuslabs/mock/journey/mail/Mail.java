@@ -21,7 +21,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package com.karuslabs.mock.journey.notifiacations;
+package com.karuslabs.mock.journey.mail;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -29,7 +29,7 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 
-public class Notification {
+public class Mail {
     
     @JsonProperty("id")
     public int id;
@@ -41,23 +41,23 @@ public class Notification {
     public String status;
     
     
-    public Notification() {
+    public Mail() {
         
     }
     
     
-    public Notification(int id, String message) {
+    public Mail(int id, String message) {
         this.id = id;
         this.message = message;
         this.date = DateTimeFormatter.ISO_LOCAL_DATE_TIME.format(LocalDateTime.now());
         this.status = "new";
     }
     
-    public Notification(Notification notification) {
-        this.id = notification.id;
-        this.message = notification.message;
-        this.date = notification.date;
-        this.status = notification.status;
+    public Mail(Mail mail) {
+        this.id = mail.id;
+        this.message = mail.message;
+        this.date = mail.date;
+        this.status = mail.status;
     }
     
 }

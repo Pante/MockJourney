@@ -21,42 +21,43 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package com.karuslabs.mock.journey.notifiacations;
+package com.karuslabs.mock.journey.mail;
 
 import com.karuslabs.mock.journey.Controller;
 import com.karuslabs.mock.journey.Main;
 
 import java.io.IOException;
 import java.util.*;
-import static java.util.stream.Collectors.toMap;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
 import org.springframework.web.bind.annotation.*;
 
+import static java.util.stream.Collectors.toMap;
 import static org.springframework.web.bind.annotation.RequestMethod.*;
 
 
 @CrossOrigin
 @RestController
-public class NotificationController extends Controller<Map<Integer, Notification>> {
+public class MailController extends Controller<Map<Integer, Mail>> {
     
-    public NotificationController() throws IOException {
-        super("notifications.json", null);
+    public MailController() throws IOException {
+        super("mail.json", null);
         load(1);
         load(2);
     }
     
     
     @Override
-    protected Map<Integer, Notification> deserialize() throws IOException {
-        var notifications = Arrays.asList(Main.MAPPER.readValue(getClass().getClassLoader().getResourceAsStream(name), Notification[].class));
+    protected Map<Integer, Mail> deserialize() throws IOException {
+        var notifications = Arrays.asList(Main.MAPPER.readValue(getClass().getClassLoader().getResourceAsStream(name), Mail[].class));
         return notifications.stream().collect(toMap(notification -> notification.id, notification -> notification));
     }
     
     
-    @RequestMapping(path = "/notifications", method = GET)
-    public List<Notification> view(@RequestParam("id") int id) throws IOException, InterruptedException {
+    @RequestMapping(path = "/mail", method = GET)
+    public List<Mail> view(@RequestParam("id") int id) throws IOException, InterruptedException {
         var stamp = lock.writeLock();
         try {
             var notifications = users.get(id);
@@ -67,7 +68,7 @@ public class NotificationController extends Controller<Map<Integer, Notification
             var sent = new ArrayList<>(notifications.values());
             for (var notification: sent) {
                 if (notification.status.equals("new")) {
-                    var copy = new Notification(notification);
+                    var copy = new Mail(notification);
                     copy.status = "displayed";
                     notifications.put(id, copy);
                 }
@@ -81,7 +82,7 @@ public class NotificationController extends Controller<Map<Integer, Notification
     }
     
     
-    @RequestMapping(path = "/notifications", method = PATCH)
+    @RequestMapping(path = "/mail", method = PATCH)
     public ResponseEntity<String> read(@RequestBody Body body) throws IOException, InterruptedException {
         var stamp = lock.readLock();
         try {
