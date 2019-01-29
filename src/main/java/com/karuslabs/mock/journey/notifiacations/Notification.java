@@ -37,8 +37,8 @@ public class Notification {
     public String message;
     @JsonProperty("date")
     public String date;
-    @JsonProperty("read")
-    public boolean read;
+    @JsonProperty("status")
+    public String status;
     
     
     public Notification() {
@@ -50,7 +50,14 @@ public class Notification {
         this.id = id;
         this.message = message;
         this.date = DateTimeFormatter.ISO_LOCAL_DATE_TIME.format(LocalDateTime.now());
-        this.read = false;
+        this.status = "new";
+    }
+    
+    public Notification(Notification notification) {
+        this.id = notification.id;
+        this.message = notification.message;
+        this.date = notification.date;
+        this.status = notification.status;
     }
     
 }

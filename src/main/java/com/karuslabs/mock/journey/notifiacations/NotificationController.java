@@ -63,8 +63,17 @@ public class NotificationController extends Controller<Map<Integer, Notification
             if (Main.enable) {
                 notifications.putAll(Main.locker.poll());
             }
-        
-            return new ArrayList<>(notifications.values());
+            
+            var sent = new ArrayList<>(notifications.values());
+            for (var notification: sent) {
+                if (notification.status.equals("new")) {
+                    var copy = new Notification(notification);
+                    copy.status = "displayed";
+                    notifications.put(id, copy);
+                }
+            }
+            
+            return sent;
                     
         } finally {
             lock.unlock(stamp);
@@ -77,7 +86,7 @@ public class NotificationController extends Controller<Map<Integer, Notification
         var stamp = lock.readLock();
         try {
             var notifications = users.get(body.id);
-            notifications.get(body.notification).read = true;
+            notifications.get(body.notification).status = "read";
         
             return new ResponseEntity<>(HttpStatus.OK);
                     
