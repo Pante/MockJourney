@@ -42,57 +42,54 @@ import static org.springframework.web.bind.annotation.RequestMethod.*;
 @RestController
 public class MailController extends Controller<Map<Integer, Mail>> {
     
+    private static final Object LOCK = new Object();
+    
+    
     public MailController() throws IOException {
         super("mail.json", null);
-        load(1);
-        load(2);
+        synchronized (LOCK) {
+            load(1);
+            load(2);
+        }
     }
     
     
     @Override
     protected Map<Integer, Mail> deserialize() throws IOException {
         var notifications = Arrays.asList(Main.MAPPER.readValue(getClass().getClassLoader().getResourceAsStream(name), Mail[].class));
-        return notifications.stream().collect(toMap(notification -> notification.id, notification -> notification));
+        return notifications.stream().collect(toMap(mail -> mail.id, mail -> mail));
     }
-    
+
     
     @RequestMapping(path = "/mail", method = GET)
     public List<Mail> view(@RequestParam("id") int id) throws IOException, InterruptedException {
-        var stamp = lock.writeLock();
-        try {
-            var notifications = users.get(id);
+        synchronized (LOCK) {
+            var mails = users.get(id);
             if (Main.enable) {
-                notifications.putAll(Main.locker.poll());
+                mails.putAll(Main.locker.poll());
             }
             
-            var sent = new ArrayList<>(notifications.values());
-            for (var notification: sent) {
-                if (notification.status.equals("new")) {
-                    var copy = new Mail(notification);
-                    copy.status = "displayed";
-                    notifications.put(id, copy);
+            var sent = new ArrayList<>(mails.values());
+            for (var mail: sent) {
+                if (mail.status.equalsIgnoreCase("new")) {
+                    var copy = new Mail(mail);
+                    copy.status = "Displayed";
+                    mails.put(mail.id, copy);
                 }
             }
             
-            return sent;
-                    
-        } finally {
-            lock.unlock(stamp);
+            return sent;      
         }
     }
     
     
     @RequestMapping(path = "/mail", method = PATCH)
     public ResponseEntity<String> read(@RequestBody Body body) throws IOException, InterruptedException {
-        var stamp = lock.readLock();
-        try {
-            var notifications = users.get(body.id);
-            notifications.get(body.notification).status = "read";
+        synchronized (LOCK) {
+            var mail = users.get(body.id);
+            mail.get(body.mail).status = "read";
         
-            return new ResponseEntity<>(HttpStatus.OK);
-                    
-        } finally {
-            lock.unlock(stamp);
+            return new ResponseEntity<>(HttpStatus.OK);          
         }
     }
     
@@ -100,7 +97,7 @@ public class MailController extends Controller<Map<Integer, Mail>> {
     public static class Body {
         
         public int id;
-        public int notification;
+        public int mail;
         
     }
     

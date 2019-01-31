@@ -85,7 +85,7 @@ public class RewardsController extends Controller<Rewards> {
     
     
     @RequestMapping(path = "/reward_catelogues", method = POST)
-    public ResponseEntity<String> create(@RequestParam("reward") String content, @RequestParam("file") MultipartFile file) throws IOException, InterruptedException {
+    public ResponseEntity<String> create(@RequestParam("reward") String content, @RequestParam(name = "file", required = false) MultipartFile file) throws IOException, InterruptedException {
         var creation = Main.MAPPER.readValue(content, Creation.class);
         var link = Main.imgur.upload(file.getBytes());
         var id = counter.incrementAndGet();
@@ -176,9 +176,6 @@ public class RewardsController extends Controller<Rewards> {
                 if (reward != null) {
                     cost += reward.attributes.points * item.quantity;
                     redeemed.add(reward);
-                    if (!reward.attributes.redeemStatus.equals("Eligible")) {
-                        return new ResponseEntity<>("Unable to redeem reward", HttpStatus.UNPROCESSABLE_ENTITY);
-                    }
                 }
             }
             

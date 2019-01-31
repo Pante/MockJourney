@@ -32,6 +32,7 @@ import java.util.*;
     "staff-id",
     "trans-type-id",
     "title",
+    "category",
     "description",
     "event-datetime",
     "duration-hours",
@@ -46,6 +47,8 @@ public class ActivityModification {
     public String staffId;
     @JsonProperty("trans-type-id")
     public String transTypeId;
+    @JsonProperty("category")
+    public String category;
     @JsonProperty("title")
     public String title;
     @JsonProperty("description")

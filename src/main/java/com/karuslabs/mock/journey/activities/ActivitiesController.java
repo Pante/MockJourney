@@ -84,11 +84,15 @@ public class ActivitiesController extends Controller<Activities> {
     
     
     @RequestMapping(path = "/activities", method = POST)
-    public ResponseEntity<String> create(@RequestParam("activity") String content, @RequestParam("file") MultipartFile file) throws IOException, InterruptedException {
+    public ResponseEntity<String> create(@RequestParam("activity") String content, @RequestParam(name = "file", required = false) MultipartFile file) throws IOException, InterruptedException {
         var creation = Main.MAPPER.readValue(content, Creation.class);
-        var link = Main.imgur.upload(file.getBytes());
-        var id = counter.incrementAndGet();
+        String link = null;
         
+        if (file != null) {
+            link = Main.imgur.upload(file.getBytes());
+        }
+
+        var id = counter.incrementAndGet();
         var supplier = new ActivitySupplier(id, creation.activity, link);
         
         var stamp = lock.writeLock();
@@ -160,12 +164,12 @@ public class ActivitiesController extends Controller<Activities> {
     }
     
     
-    @RequestMapping(path = "/student_transactions/enrol_activity", method = POST)
+    @RequestMapping(path = "/student_transactions/enrol_activity", method = PATCH)
     public ResponseEntity<String> enrol(@RequestBody Enrollment enrollment) throws IOException {
-        return update(enrollment, "Enrolled");
+        return update(enrollment, "Interested");
     }
     
-    @RequestMapping(path = "/student_transactions/unenrol_activity", method = POST)
+    @RequestMapping(path = "/student_transactions/unenrol_activity", method = PATCH)
     public ResponseEntity<String> unenrol(@RequestBody Enrollment enrollment) throws IOException {
         return update(enrollment, "Unenrolled");
     }

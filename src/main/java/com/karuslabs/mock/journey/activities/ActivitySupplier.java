@@ -54,8 +54,11 @@ public class ActivitySupplier implements Supplier<Activity> {
         activity.attributes.title = this.activity.title;
         activity.attributes.description = this.activity.description;
         activity.attributes.eventDatetime = this.activity.eventDatetime;
+        activity.attributes.category = this.activity.category;
+        activity.attributes.categoryDesc = Main.CATEGORIES.get(this.activity.category);
         activity.attributes.staff = this.activity.staffId;
         activity.attributes.points = this.activity.points;
+        activity.attributes.enrolStatus = "Unenrolled";
         activity.attributes.mentorGroups = this.activity.mentorGroups;
         activity.attributes.updatedAt = DateTimeFormatter.ISO_LOCAL_DATE_TIME.format(LocalDateTime.now());
         activity.attributes.imageUrl = link;

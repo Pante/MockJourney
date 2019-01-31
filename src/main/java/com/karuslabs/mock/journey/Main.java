@@ -40,6 +40,7 @@ public class Main {
 
     public static final ObjectMapper MAPPER = new ObjectMapper();
     public static final Map<Integer, String> AWARDS = Map.of(1, "Responsibility", 2, "Respect", 3, "Resilience", 4, "Integrity", 5, "Compassion");
+    public static final Map<String, String> CATEGORIES = Map.of("CommServe", "Community Service", "Volunteer", "Student Volunteer");
     
     public static Map<Integer, Profile> profiles;
     public static Imgur imgur;
