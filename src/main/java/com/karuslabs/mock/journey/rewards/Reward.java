@@ -38,6 +38,6 @@ public class Reward {
     @JsonProperty("type")
     public String type;
     @JsonProperty("attributes")
-    public Attributes attributes;
+    public Attributes attributes = new Attributes();
 
 }

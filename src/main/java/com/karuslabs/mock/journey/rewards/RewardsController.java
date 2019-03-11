@@ -87,7 +87,12 @@ public class RewardsController extends Controller<Rewards> {
     @RequestMapping(path = "/reward_catelogues", method = POST)
     public ResponseEntity<String> create(@RequestParam("reward") String content, @RequestParam(name = "file", required = false) MultipartFile file) throws IOException, InterruptedException {
         var creation = Main.MAPPER.readValue(content, Creation.class);
-        var link = Main.imgur.upload(file.getBytes());
+        String link = null;
+        
+        if (file != null) {
+            link = Main.imgur.upload(file.getBytes());
+        }
+        
         var id = counter.incrementAndGet();
         
         var supplier = new RewardSupplier(id, creation.reward, link);
@@ -95,8 +100,8 @@ public class RewardsController extends Controller<Rewards> {
         var stamp = lock.writeLock();
         try {
             suppliers.put(id, supplier);
-            for (var activities: users.values()) {
-                activities.data.add(supplier.get());
+            for (var rewards: users.values()) {
+                rewards.data.add(supplier.get());
             }
             
             return new ResponseEntity<>(HttpStatus.OK);
